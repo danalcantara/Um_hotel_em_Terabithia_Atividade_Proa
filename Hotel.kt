@@ -1,5 +1,6 @@
 class Hotel {
     //atributos
+    private var senha:Int = 2678
     private var nomeHospede = ""
     private var quartoHospede = ""
     private var valorDiaria:Double = 0.0
@@ -21,6 +22,14 @@ class Hotel {
     private var listaEmpresaManutencaoNome = mutableListOf<String>()
     private var listaEmpresaManutencaoValor = mutableListOf<Double>()
 
+
+    fun senhaVerify(senhatentativa: Int): Boolean {
+        if (senha == senhatentativa) {
+            return true
+        } else {
+            return false
+        }
+    }
     fun calculoTotal(valor:Double, dias: Int , idade: Int, quantidadeValor: Double, nome:String){
         if ((idade>= 0) and (idade <= 6)){
             valorDiaria = valor
